@@ -101,7 +101,7 @@
     bus = ctx.createGain();
     const tone = ctx.createBiquadFilter();      // suaviza agudos
     tone.type = 'lowpass';
-    tone.frequency.value = 2600;
+    tone.frequency.value = 2200;
     tone.Q.value = 0.4;
 
     const comp = ctx.createDynamicsCompressor();
@@ -109,7 +109,7 @@
     comp.ratio.value = 3;
 
     const master = ctx.createGain();
-    master.gain.value = 0.55;
+    master.gain.value = 0.3;   // volumen general (más suave)
 
     const reverb = makeReverb(2.6, 2.4);
     const wet = ctx.createGain();

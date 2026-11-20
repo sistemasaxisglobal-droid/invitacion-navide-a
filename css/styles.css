@@ -9,7 +9,7 @@
    4. Portada · sobre navideño
    5. Inicio (hero) y familia de osos
    6. Secciones: fecha, cuenta regresiva, confirmación, pie
-   7. Reproductor, nieve y reveal
+   7. Nieve y reveal
    8. Animaciones
    9. Responsive y accesibilidad
    ========================================================= */
@@ -35,7 +35,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   margin: 0;
   font-family: var(--font-serif);
@@ -44,6 +44,7 @@ body {
   color: var(--cream);
   background: var(--green);
   overflow-x: hidden;
+  width: 100%;
 }
 body.is-locked { overflow: hidden; height: 100dvh; }
 img, svg { max-width: 100%; display: block; }
@@ -88,7 +89,7 @@ h1, h2, p { margin: 0; }
 
 /* ---------- 3. Layout, paneles y botones ---------- */
 .container { width: min(100% - 2rem, 640px); margin-inline: auto; text-align: center; }
-.section { padding: clamp(3rem, 8vw, 5.5rem) 0; position: relative; }
+.section { padding: clamp(3rem, 8vw, 5.5rem) 0; position: relative; overflow-x: hidden; overflow-x: clip; }
 .section--cream {
   background: radial-gradient(circle at 50% 0%, #fbf6ea, var(--cream-2));
   color: var(--ink); overflow: hidden;
@@ -309,7 +310,10 @@ h1, h2, p { margin: 0; }
 .invite.is-visible { opacity: 1; }
 .invite.is-visible .hero__panel { animation: heroIn 1.4s cubic-bezier(.2, .8, .2, 1) both; }
 
-.hero { min-height: 100dvh; display: grid; place-items: center; padding: 2.5rem 1rem 8.5rem; }
+.hero {
+  min-height: 100dvh; display: grid; place-items: center; padding: 2.5rem 1rem 8.5rem;
+  overflow: hidden; overflow: clip; /* nada sobresale a los lados en iPhone */
+}
 .hero__panel { width: min(100%, 460px); display: flex; flex-direction: column; align-items: center; gap: .5rem; }
 .hero__title { font-size: clamp(4rem, 2rem + 9vw, 6.2rem); margin-top: .9rem; }
 .hero__panel .display { font-size: clamp(1.2rem, 1rem + 1.6vw, 1.9rem); }
@@ -394,24 +398,7 @@ h1, h2, p { margin: 0; }
 .footer__logo { width: min(56%, 200px); height: auto; margin: 1.6rem auto 0; opacity: .95; }
 .footer__small { margin-top: .6rem; opacity: .75; font-style: italic; }
 
-/* ---------- 7. Reproductor, nieve y reveal ---------- */
-.music {
-  position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 40;
-  width: 54px; height: 54px; border-radius: 50%;
-  display: grid; place-items: center;
-  color: #2b1d05; cursor: pointer;
-  background: linear-gradient(135deg, #f3dc9b, #c9a24d 55%, #9c7a2c);
-  border: 2px solid var(--green); box-shadow: 0 8px 22px rgba(0, 0, 0, .4);
-  transition: transform .2s;
-}
-.music:hover { transform: scale(1.08); }
-.music:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 3px; }
-.music__icon { width: 26px; height: 26px; }
-.music__icon--pause { display: none; }
-.music.is-playing .music__icon--play { display: none; }
-.music.is-playing .music__icon--pause { display: block; }
-.music.is-playing::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--gold); animation: ripple 2s ease-out infinite; }
-
+/* ---------- 7. Nieve y reveal ---------- */
 .snow { position: fixed; inset: 0; pointer-events: none; z-index: 60; overflow: hidden; }
 .flake {
   position: absolute; top: -12px;

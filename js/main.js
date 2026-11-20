@@ -22,7 +22,7 @@
     eventLabel: '11 de diciembre a las 8:00 pm',
     // WhatsApp con código de país (52 = México). Cámbialo si es de otro país.
     whatsappNumber: '523757607850',
-    musicVolume: 0.5
+    musicVolume: 0.3
   };
 
   /* ---------- 2. Referencias y utilidades ---------- */
@@ -36,39 +36,29 @@
      Si existe assets/audio/villancicos.mp3 se reproduce ese archivo.
      Si no existe o falla, suena el villancico sintetizado de js/carol.js. */
   const audio = $('#bgm');
-  const musicBtn = $('#musicBtn');
   const carol = window.CarolSynth;
   let useSynth = false;
   let wasPlaying = false;
 
   audio.volume = CONFIG.musicVolume;
 
-  const setPlayingUI = (on) => {
-    musicBtn.classList.toggle('is-playing', on);
-    musicBtn.setAttribute('aria-pressed', String(on));
-  };
-
   const isPlaying = () => (useSynth ? !!(carol && carol.playing) : !audio.paused);
 
   function startSynth() {
     useSynth = true;
-    if (carol) { carol.play(); setPlayingUI(true); }
+    if (carol) carol.play();
   }
 
   function playMusic() {
     if (useSynth) { startSynth(); return; }
     const p = audio.play();
-    if (p && typeof p.then === 'function') {
-      p.then(() => setPlayingUI(true)).catch(startSynth);
-    }
+    if (p && typeof p.catch === 'function') p.catch(startSynth);
   }
 
   function pauseMusic() {
-    if (useSynth) carol.pause(); else audio.pause();
-    setPlayingUI(false);
+    if (useSynth) { if (carol) carol.pause(); } else audio.pause();
   }
 
-  musicBtn.addEventListener('click', () => (isPlaying() ? pauseMusic() : playMusic()));
   audio.addEventListener('error', () => { useSynth = true; });
 
   // Pausa al ocultar la pestaña y reanuda al volver si estaba sonando
@@ -162,7 +152,6 @@
       window.scrollTo(0, 0);
       invite.classList.add('is-visible');
       invite.removeAttribute('aria-hidden');
-      musicBtn.hidden = false;
       initReveal();
     }, 2300);
     at(() => { cover.hidden = true; }, 3600);
