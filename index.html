@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Posada Navideña · Familia López Sandoval</title>
+  <meta name="description" content="La Familia López Sandoval te invita a su posada navideña el 11 de diciembre a las 8:00 pm.">
+  <meta name="theme-color" content="#0f2a22">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-locked">
+
+  <!-- Nieve (la genera js/main.js) -->
+  <div class="snow" id="snow" aria-hidden="true"></div>
+
+  <!-- ================= PORTADA · SOBRE NAVIDEÑO ================= -->
+  <section class="cover" id="cover" aria-label="Sobre de la invitación">
+    <div class="lights" id="lights" aria-hidden="true"></div>
+    <div class="bokeh" id="bokeh" aria-hidden="true"></div>
+
+    <div class="envelope-wrap" id="envWrap">
+
+      <!-- Logo con marco navideño -->
+      <div class="brand">
+        <svg class="brand__bow" viewBox="0 0 200 110" aria-hidden="true"><use href="#bow"/></svg>
+        <div class="brand__plaque">
+          <img src="assets/img/logo-pedro-lopez.png" alt="Pedro López, Asesor en Seguros" width="900" height="618">
+        </div>
+        <svg class="brand__pine brand__pine--l" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+        <svg class="brand__pine brand__pine--r" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+      </div>
+
+      <!-- Sobre -->
+      <div class="envelope" id="envelope">
+        <div class="env__back"></div>
+
+        <!-- Carta -->
+        <div class="env__letter">
+          <p class="eyebrow">Estás invitado a</p>
+          <h1 class="script env__title">Posada Navideña</h1>
+          <p class="env__family">Familia López Sandoval</p>
+          <span class="env__star" aria-hidden="true">✦</span>
+        </div>
+
+        <!-- Frente (bolsillo) -->
+        <div class="env__front"><div class="env__front-in"><div class="env__band"></div></div></div>
+        <svg class="env__pine env__pine--l" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+        <svg class="env__pine env__pine--r" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+        <div class="env__tag">Para ti, con cariño</div>
+
+        <!-- Solapa -->
+        <div class="env__flap" aria-hidden="true">
+          <div class="env__flap-face env__flap-out">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="5,0 95,0 50,90" fill="none" stroke="#ecd9a0" stroke-width="1.6" stroke-dasharray="5 4" vector-effect="non-scaling-stroke" opacity=".8"/></svg>
+          </div>
+          <div class="env__flap-face env__flap-in"></div>
+        </div>
+
+        <!-- Sello de cera -->
+        <button class="env__seal" id="openBtn" type="button" aria-label="Abrir invitación">FL</button>
+        <div class="burst" id="burst" aria-hidden="true"></div>
+      </div>
+
+      <p class="env__hint">Toca el sello para abrir ♪</p>
+    </div>
+  </section>
+
+  <!-- ================= INVITACIÓN ================= -->
+  <main class="invite" id="invite" aria-hidden="true">
+
+    <!-- Inicio -->
+    <header class="hero tartan">
+      <div class="panel panel--arch hero__panel">
+        <p class="eyebrow reveal">Querido amigo, estás invitado a la</p>
+        <h2 class="script hero__title reveal">Posada</h2>
+        <p class="display reveal">NAVIDEÑA</p>
+        <p class="hero__sub reveal">Tradición · Calidez · Familia</p>
+
+        <figure class="bears reveal">
+          <img src="assets/img/familia-osos.png" width="1000" height="1313" alt="Familia de osos elegantes: papá, mamá y sus tres pequeños, vestidos para Navidad">
+        </figure>
+      </div>
+      <a class="scroll-hint" href="#mensaje" aria-label="Ir al mensaje"><span></span></a>
+    </header>
+
+    <!-- Mensaje -->
+    <section class="section section--cream" id="mensaje">
+      <div class="container">
+        <span class="orn reveal" aria-hidden="true">❄</span>
+        <p class="eyebrow eyebrow--dark reveal">Con mucho cariño</p>
+        <h2 class="script section__title reveal">Familia López Sandoval</h2>
+        <p class="lead reveal">
+          invita a sus seres queridos y amigos a celebrar juntos una noche llena de
+          luz, tradición y alegría. Ven a compartir con nosotros el espíritu de la
+          Navidad con una posada que no olvidaremos.
+        </p>
+        <svg class="divider-pine reveal" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+      </div>
+    </section>
+
+    <!-- Fecha y lugar -->
+    <section class="section tartan" id="detalles">
+      <div class="container">
+        <div class="panel panel--ticket reveal">
+          <p class="eyebrow">Fecha &amp; lugar</p>
+
+          <div class="date" aria-label="Viernes 11 de diciembre de 2026">
+            <div class="date__day">11</div>
+            <div class="date__divider" aria-hidden="true"></div>
+            <div class="date__info">
+              <span>Diciembre</span>
+              <span>Viernes · 2026</span>
+              <span>8:00 PM</span>
+            </div>
+          </div>
+
+          <div class="rule" aria-hidden="true"><i>✦</i></div>
+
+          <p class="place">Te esperamos en el<br><strong>Salón de Eventos</strong></p>
+
+          <a class="btn btn--gold" id="mapBtn" href="https://maps.app.goo.gl/g5hrYCj9HPhuJdwPA" target="_blank" rel="noopener noreferrer">
+            <span>📍 Ver ubicación</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuenta regresiva -->
+    <section class="section section--cream" id="cuenta">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark reveal">Faltan solo</p>
+        <div class="countdown reveal" id="countdown" role="timer" aria-live="off">
+          <div class="countdown__item"><b id="cd-days">00</b><small>Días</small></div>
+          <div class="countdown__item"><b id="cd-hours">00</b><small>Horas</small></div>
+          <div class="countdown__item"><b id="cd-mins">00</b><small>Min</small></div>
+          <div class="countdown__item"><b id="cd-secs">00</b><small>Seg</small></div>
+        </div>
+        <p class="countdown__msg script" id="cd-msg" hidden></p>
+      </div>
+    </section>
+
+    <!-- Confirmación por WhatsApp -->
+    <section class="section tartan" id="confirmar">
+      <div class="container">
+        <div class="panel panel--arch rsvp reveal">
+          <p class="eyebrow">Confirma tu asistencia</p>
+          <h2 class="script rsvp__title">¿Nos acompañas?</h2>
+          <p class="rsvp__text">Cuéntanos si vienes, te responderemos por WhatsApp.</p>
+
+          <form id="rsvpForm" novalidate>
+            <div class="field">
+              <label for="name">Tu nombre</label>
+              <input type="text" id="name" name="name" placeholder="Nombre y apellido" autocomplete="name" required>
+              <small class="error" id="nameError" hidden>Por favor escribe tu nombre.</small>
+            </div>
+
+            <div class="field">
+              <label for="guests">Número de personas</label>
+              <select id="guests" name="guests">
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+                <option value="6">6 o más</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="msg">Mensaje (opcional)</label>
+              <textarea id="msg" name="msg" rows="3" placeholder="Un mensaje para la familia…"></textarea>
+            </div>
+
+            <button class="btn btn--whatsapp" type="submit">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24s8.24 3.7 8.24 8.24-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29Z"/>
+              </svg>
+              <span>Confirmar por WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie -->
+    <footer class="footer" id="pie">
+      <svg class="footer__pine" viewBox="0 0 200 60" aria-hidden="true"><use href="#pine"/></svg>
+      <p class="script footer__sign"><span>Con cariño,</span> <span>Familia López Sandoval</span></p>
+      <img class="footer__logo" src="assets/img/logo-pedro-lopez.png" alt="Pedro López, Asesor en Seguros" width="900" height="618" loading="lazy">
+      <p class="footer__small">¡Felices fiestas! 🎄</p>
+    </footer>
+  </main>
+
+  <!-- ================= REPRODUCTOR ================= -->
+  <button class="music" id="musicBtn" type="button" aria-label="Activar o pausar música navideña" aria-pressed="false" hidden>
+    <svg class="music__icon music__icon--play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+    <svg class="music__icon music__icon--pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+  </button>
+  <!-- Opcional: coloca aquí tu propio MP3. Si no existe, suena la melodía sintetizada de js/carol.js -->
+  <audio id="bgm" src="assets/audio/villancicos.mp3" loop preload="auto"></audio>
+
+  <!-- ================= SVG REUTILIZABLES ================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f3dc9b"/>
+        <stop offset=".5" stop-color="#c9a24d"/>
+        <stop offset="1" stop-color="#8f6b22"/>
+      </linearGradient>
+
+      <!-- Moño -->
+      <g id="bow">
+        <path d="M100 55 C70 5 15 5 12 40 C10 75 65 80 100 55Z" fill="#7a1022"/>
+        <path d="M100 55 C130 5 185 5 188 40 C190 75 135 80 100 55Z" fill="#7a1022"/>
+        <path d="M100 55 C75 25 35 22 28 42 C45 60 75 62 100 55Z" fill="#a31a33" opacity=".75"/>
+        <path d="M100 55 C125 25 165 22 172 42 C155 60 125 62 100 55Z" fill="#a31a33" opacity=".75"/>
+        <path d="M92 60 L70 105 L88 98 L96 108 L104 66Z" fill="#5c0b19"/>
+        <path d="M108 60 L130 105 L112 98 L104 108 L96 66Z" fill="#6b0e1f"/>
+        <ellipse cx="100" cy="55" rx="13" ry="15" fill="#5c0b19"/>
+        <path d="M12 40 C10 75 65 80 100 55" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+        <path d="M188 40 C190 75 135 80 100 55" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+      </g>
+
+      <!-- Rama de pino con bayas -->
+      <g id="pine">
+        <path d="M5 30 Q100 8 195 30" fill="none" stroke="#2c5a3f" stroke-width="3" stroke-linecap="round"/>
+        <g stroke="#2c5a3f" stroke-width="2.5" stroke-linecap="round">
+          <path d="M20 28 l-8 14 M20 28 l6 14 M45 24 l-8 16 M45 24 l8 16 M70 20 l-7 17 M70 20 l8 17
+                   M100 18 l-8 18 M100 18 l8 18 M130 20 l-8 17 M130 20 l7 17 M155 24 l-7 16 M155 24 l8 16
+                   M180 28 l-6 14 M180 28 l8 14"/>
+        </g>
+        <circle cx="58" cy="38" r="4.5" fill="#a31a33"/>
+        <circle cx="66" cy="42" r="4.5" fill="#a31a33"/>
+        <circle cx="62" cy="34" r="4.5" fill="#c4263f"/>
+        <circle cx="140" cy="38" r="4.5" fill="#a31a33"/>
+        <circle cx="148" cy="42" r="4.5" fill="#a31a33"/>
+        <circle cx="144" cy="34" r="4.5" fill="#c4263f"/>
+      </g>
+    </defs>
+  </svg>
+
+  <script src="js/carol.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
